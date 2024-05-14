@@ -1,4 +1,4 @@
-const fibonacci = function fibonacciSequenceIterative(lengthOfSequence){
+const fibonacciIterative = function fibonacciSequenceIterative(lengthOfSequence){
 
     //START AT ZERO
     let start = 0;
@@ -30,4 +30,20 @@ const fibonacci = function fibonacciSequenceIterative(lengthOfSequence){
 
 
 }
+
+function generateFibonacci(n) {
+    if (n <= 0) {
+        return [];
+    } else if (n === 1) {
+        return [0];
+    } else if (n === 2) {
+        return [0, 1];
+    } else {
+        let sequence = generateFibonacci(n - 1);
+        sequence.push(sequence[sequence.length - 1] + sequence[sequence.length - 2]);
+        return sequence;
+    }
+}
+
+console.log(generateFibonacci(8));
 
